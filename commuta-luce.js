@@ -13,7 +13,7 @@ xapi.config.set('HttpClient Mode', 'On'); // abilita l'uso di http client sull'a
 // Accende la luce alla connesione di una chiamata
 xapi.command('HttpFeedback Register', {Expression: '/Event/CallSuccessful', Feedbackslot: '1', ServerUrl: SONOFF_URL_ON})
 // Spegne la luce al termine di una chiamata
-xapi.command('HttpFeedback Register', {Expression: '/Event/CallSuccessful', Feedbackslot: '2', ServerUrl: SONOFF_URL_OFF})
+xapi.command('HttpFeedback Register', {Expression: '/Event/CallDisconnect', Feedbackslot: '2', ServerUrl: SONOFF_URL_OFF})
 
 xapi.event.on('UserInterface Extensions Panel Clicked', (event) => { //panel clicked è per i tasti nella pagina principale
     if(event.PanelId === 'commuta-luce'){
